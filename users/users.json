@@ -1,12 +1,12 @@
 [
     {
         "id": 4,
-        "name": "Patricia Lebsack",
+        "name": "Patricia Lebsack 1",
         "username": "Karianne",
         "email": "Julianne.OConner@kory.org",
         "phone": "123451234",
         "website": "kale.biz",
-        "extension": ""
+        "extension": "jpg"
     },
     {
         "id": 5,
@@ -23,7 +23,8 @@
         "username": "Leopoldo_Corkery",
         "email": "Karley_Dach@jasper.info",
         "phone": "1078412367",
-        "website": "ola.org"
+        "website": "ola.org",
+        "extension": "jpg"
     },
     {
         "id": 7,

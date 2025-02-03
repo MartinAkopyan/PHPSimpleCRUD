@@ -2,15 +2,13 @@
 require __DIR__ . '/users/users.php';
 include __DIR__ . '/partials/header.php';
 
-echo '<pre>';
-//print_r(getUsers());
-echo '</pre>';
 $users = getUsers();
 ?>
 
 <?php ?>
 
     <div class="container">
+        <a href="create.php" class="btn btn-outline-success my-4">Create new user</a>
         <table class="table">
             <thead>
             <tr>
