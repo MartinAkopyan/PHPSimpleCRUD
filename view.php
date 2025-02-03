@@ -18,6 +18,9 @@ if (!$user) {
 
 <div class="container">
     <form method="POST" action="update.php?id=<?= $user['id'] ?>" enctype="multipart/form-data" class="mt-5 card p-4">
+        <div class="card-header mb-4">
+            <h1>Update user</h1>
+        </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name:</label>
             <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="<?= $user['name'] ?>">
@@ -42,7 +45,12 @@ if (!$user) {
             <label for="exampleInputEmail1" class="form-label">Image:</label>
             <input type="file" name="avatar" class="form-control">
         </div>
-        <button class="btn btn-primary" type="submit">Update</button>
+        <div class="d-flex gap-3">
+            <button class="btn btn-primary" type="submit">Update</button>
+            <a href="/delete.php?id=<?= $user['id'] ?>" class="btn btn-outline-danger">
+                Delete
+            </a>
+        </div>
     </form>
 </div>
 
