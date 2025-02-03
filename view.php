@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/users.php';
+require __DIR__ . '/users/users.php';
 include __DIR__ . '/partials/header.php';
 
 if (!isset($_GET['id'])) {
@@ -10,14 +10,14 @@ if (!isset($_GET['id'])) {
 $userId = $_GET['id'];
 $user = getUserById($userId);
 
-if(!$user) {
+if (!$user) {
     include 'partials/not_found.php';
     exit;
 }
 ?>
 
 <div class="container">
-    <form method="POST" enctype="multipart/form-data" class="mt-5 card p-4">
+    <form method="POST" action="update.php?id=<?= $user['id'] ?>" enctype="multipart/form-data" class="mt-5 card p-4">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name:</label>
             <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="<?= $user['name'] ?>">
@@ -28,7 +28,7 @@ if(!$user) {
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email:</label>
-            <input type="email" name="email" class="form-control"  value="<?= $user['email'] ?>">
+            <input type="email" name="email" class="form-control" value="<?= $user['email'] ?>">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Phone:</label>
@@ -38,11 +38,9 @@ if(!$user) {
             <label for="exampleInputEmail1" class="form-label">Website:</label>
             <input type="text" name="website" class="form-control" value="<?= $user['website'] ?>">
         </div>
-        <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-primary">Update</button>
-            <form action="">
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Image:</label>
+            <input type="file" name="avatar" class="form-control">
         </div>
     </form>
 </div>
