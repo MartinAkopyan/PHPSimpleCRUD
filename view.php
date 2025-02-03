@@ -1,40 +1,50 @@
 <?php
 require __DIR__ . '/users.php';
+include __DIR__ . '/partials/header.php';
+
+if (!isset($_GET['id'])) {
+    include 'partials/not_found.php';
+    exit;
+}
 
 $userId = $_GET['id'];
 $user = getUserById($userId);
 
+if(!$user) {
+    include 'partials/not_found.php';
+    exit;
+}
 ?>
-<?php require __DIR__ . '/partials/header.php'; ?>
+
 <div class="container">
-    <table class="table">
-        <tbody>
-        <tr>
-            <th>Name:</th>
-            <td><?= $user['name'] ?></td>
-        </tr>
-        <tr>
-            <th>Username:</th>
-            <td><?= $user['username'] ?></td>
-        </tr>
-        <tr>
-            <th>Email:</th>
-            <td><?= $user['email'] ?></td>
-        </tr>
-        <tr>
-            <th>Phone:</th>
-            <td><?= $user['phone'] ?></td>
-        </tr>
-        <tr>
-            <th>Website:</th>
-            <td><?= $user['website'] ?></td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td><?= $user['name'] ?></td>
-        </tr>
-        </tbody>
-    </table>
+    <form method="POST" enctype="multipart/form-data" class="mt-5 card p-4">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name:</label>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="<?= $user['name'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username:</label>
+            <input type="text" name="username" class="form-control" value="<?= $user['username'] ?>"">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control"  value="<?= $user['email'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone:</label>
+            <input type="text" name="phone" class="form-control" value="<?= $user['phone'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Website:</label>
+            <input type="text" name="website" class="form-control" value="<?= $user['website'] ?>">
+        </div>
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <form action="">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </form>
 </div>
 
-<?php require __DIR__ . '/partials/footer.php'; ?>
+<?php include __DIR__ . '/partials/footer.php'; ?>

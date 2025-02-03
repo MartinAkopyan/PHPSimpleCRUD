@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/users.php';
+include __DIR__ . '/partials/header.php';
 
 echo '<pre>';
 //print_r(getUsers());
@@ -7,7 +8,7 @@ echo '</pre>';
 $users = getUsers();
 ?>
 
-<?php require __DIR__ . '/partials/header.php'; ?>
+<?php ?>
 
 <div class="container">
     <table class="table">
@@ -38,4 +39,4 @@ $users = getUsers();
         </tbody>
     </table>
 </div>
-<?php require __DIR__ . '/partials/footer.php'; ?>
+<?php include __DIR__ . '/partials/footer.php'; ?>
