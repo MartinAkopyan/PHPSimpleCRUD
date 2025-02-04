@@ -80,5 +80,30 @@ function uploadImage($file, $user)
 function putJson($data)
 {
     file_put_contents(__DIR__ . '/users.json', json_encode($data, JSON_PRETTY_PRINT));
+}
 
+function validateUser($user, &$errors) {
+    $isValid = true;
+
+    if (!$user['name']) {
+        $isValid = false;
+        $errors['name'] = 'Name is required';
+    }
+
+    if (!$user['username'] || strlen($user['username']) < 6 || strlen($user['username']) > 16) {
+        $isValid = false;
+        $errors['username'] = 'Username must be between 6-16 characters';
+    }
+
+    if (!$user['email'] || !filter_var($user['email'], FILTER_VALIDATE_EMAIL)) {
+        $isValid = false;
+        $errors['email'] = 'Email is required and must be a valid email address';
+    }
+
+    if ($user['phone'] && !filter_var($user['phone'], FILTER_VALIDATE_INT)) {
+        $isValid = false;
+        $errors['phone'] = 'Phone number must be a valid phone number';
+    }
+
+    return $isValid;
 }

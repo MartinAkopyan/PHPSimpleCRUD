@@ -24,31 +24,10 @@ $errors = [
     'website' => '',
 ];
 
-$isValid = true;
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = array_merge($user, $_POST);
 
-    // Validation
-    if (!$user['name']) {
-        $isValid = false;
-        $errors['name'] = 'Name is required';
-    }
-
-    if (!$user['username'] || strlen($user['username']) < 6 || strlen($user['username']) > 16) {
-        $isValid = false;
-        $errors['username'] = 'Username must be between 6-16 characters';
-    }
-
-    if (!$user['email'] || !filter_var($user['email'], FILTER_VALIDATE_EMAIL)) {
-        $isValid = false;
-        $errors['email'] = 'Email is required and must be a valid email address';
-    }
-
-    if ($user['phone'] && !filter_var($user['phone'], FILTER_VALIDATE_INT)) {
-        $isValid = false;
-        $errors['phone'] = 'Phone number must be a valid phone number';
-    }
+    $isValid = validateUser($user,$errors);
 
     if ($isValid) {
         $user = updateUser($_POST, $userId);
