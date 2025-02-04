@@ -14,6 +14,6 @@ This project is a simple PHP CRUD application that stores data in a `JSON` file 
 2. Build and run the container:  
    ```sh
    docker-compose up --build -d  
-3. Open in your browser:
- 👉 ```sh 
+3. Open in your browser:  
+    ```sh 
    http://localhost:8080
