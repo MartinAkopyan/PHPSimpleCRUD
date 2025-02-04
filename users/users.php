@@ -49,8 +49,10 @@ function deleteUser($id)
     $users = getUsers();
     foreach ($users as $i => $user) {
         if ($user['id'] == $id) {
-            if (file_exists( __DIR__ . '/images/' . $id . '.' . $user['extension'])) {
-                unlink(__DIR__ . '/images/' . $id . '.' . $user['extension']);
+            if (isset($user['extension'])) {
+                if (file_exists(__DIR__ . '/images/' . $id . '.' . $user['extension'])) {
+                    unlink(__DIR__ . '/images/' . $id . '.' . $user['extension']);
+                }
             }
             array_splice($users, $i, 1);
         }
@@ -75,7 +77,8 @@ function uploadImage($file, $user)
     }
 }
 
-function putJson($data) {
+function putJson($data)
+{
     file_put_contents(__DIR__ . '/users.json', json_encode($data, JSON_PRETTY_PRINT));
 
 }
