@@ -10,28 +10,28 @@ This project is a simple PHP CRUD application that stores data in a `JSON` file 
 - Works with Docker using Apache and PHP 8.2
 
 ## 📂 Directory structure:
-└── martinakopyan-phpsimplecrud/
-    ├── README.md
-    ├── Dockerfile
-    ├── _form.php
-    ├── create.php
-    ├── delete.php
-    ├── docker-compose.yml
-    ├── index.php
-    ├── update.php
-    ├── view.php
-    ├── partials/
-    │   ├── footer.php
-    │   ├── header.php
-    │   └── not_found.php
-    └── users/
-        ├── users.json
-        └── users.php
+└── martinakopyan-phpsimplecrud/  
+    ├── README.md  
+    ├── Dockerfile  
+    ├── _form.php  
+    ├── create.php  
+    ├── delete.php  
+    ├── docker-compose.yml  
+    ├── index.php  
+    ├── update.php  
+    ├── view.php  
+    ├── partials/  
+    │   ├── footer.php  
+    │   ├── header.php  
+    │   └── not_found.php  
+    └── users/  
+        ├── users.json  
+        └── users.php  
 
-## 🔹 Running with Docker
-1.Make sure Docker and Docker Compose are installed
-2.Build and run the container:
-sh
-  docker-compose up --build -d
-3.Open in your browser:
-👉 http://localhost:8080
+## 🔹 Running with Docker  
+1. Make sure Docker and Docker Compose are installed.  
+2. Build and run the container:  
+   ```sh
+   docker-compose up --build -d  
+3.Open in your browser:  
+👉 http://localhost:8080  
