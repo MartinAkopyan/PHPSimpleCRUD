@@ -21,17 +21,17 @@ This project is a simple PHP CRUD application that stores data in a `JSON` file 
     ├── update.php  
     ├── view.php  
     ├── partials/  
-    │   ├── footer.php  
-    │   ├── header.php  
-    │   └── not_found.php  
+    │       ├── footer.php  
+    │       ├── header.php  
+    │       └── not_found.php  
     └── users/  
-        ├── users.json  
-        └── users.php  
+            ├── users.json  
+            └── users.php  
 
 ## 🔹 Running with Docker  
 1. Make sure Docker and Docker Compose are installed.  
 2. Build and run the container:  
    ```sh
    docker-compose up --build -d  
-3.Open in your browser:  
-👉 http://localhost:8080  
+3. Open in your browser:  
+  👉 http://localhost:8080
