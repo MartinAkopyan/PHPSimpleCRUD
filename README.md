@@ -1,13 +1,16 @@
-# PHP Simple CRUD
+# 🔄 PHP Simple CRUD  
 
-This project is a simple PHP CRUD application that stores data in a `JSON` file and supports running in Docker.
+This project is a simple PHP **📝 Create, 📖 Read, ✏️ Update, ❌ Delete (CRUD)** application that stores data in a `JSON` file and supports running in Docker.  
 
-## 🚀 Features
-- Create, Read, Update, and Delete (CRUD) users
-- Store data in `users.json`
-- Upload and save user images
-- Data validation before saving
-- Works with Docker using Apache and PHP 8.2
+## 🚀 Features  
+- 📝 **Create** users  
+- 📖 **Read** user data  
+- ✏️ **Update** user information  
+- ❌ **Delete** users  
+- 💾 Data stored in `users.json`  
+- 📸 Upload and save user images  
+- 🛡️ Data validation before saving  
+- 🐳 Works with Docker using Apache and PHP 8.2  
 
 ## 🔹 Running with Docker  
 1. Make sure Docker and Docker Compose are installed.  
